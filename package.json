@@ -1,0 +1,82 @@
+{
+  "name": "data-viz",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@types/graphql": "^14.2.1",
+    "@types/jest": "24.0.15",
+    "@types/node": "12.0.8",
+    "@types/ramda": "^0.26.9",
+    "@types/react": "16.8.22",
+    "@types/react-dom": "16.8.4",
+    "@types/qs": "^6.5.3",
+    "@types/react-router-dom": "^4.3.4",
+    "@types/styled-components": "^4.1.16",
+    "@types/styled-system": "^4.2.1",
+    "@types/yup": "^0.26.20",
+    "apollo-cache-inmemory": "^1.6.2",
+    "react-scroll-to": "^2.0.9",
+    "apollo-client": "^2.6.3",
+    "apollo-link": "^1.2.12",
+    "apollo-link-http": "^1.5.15",
+    "apollo-link-error": "^1.1.11",
+    "formik": "^1.5.7",
+    "graphql": "^14.3.1",
+    "graphql-anywhere": "^4.2.4",
+    "graphql-tag": "^2.10.1",
+    "use-debounce": "^2.2.0",
+    "qs": "^6.7.0",
+    "ramda": "^0.26.1",
+    "react": "^16.8.6",
+    "react-apollo": "^2.5.8",
+    "react-apollo-hooks": "^0.4.5",
+    "react-content-loader": "^4.2.1",
+    "react-device-detect": "^1.6.2",
+    "react-dom": "^16.8.6",
+    "react-icons": "^3.7.0",
+    "react-router-dom": "^5.0.1",
+    "react-scripts": "3.0.1",
+    "react-toastify": "^5.3.0",
+    "snake-case": "^2.1.0",
+    "styled-components": "^4.3.2",
+    "styled-reset": "^2.0.16",
+    "styled-system": "^5.0.10",
+    "typescript": "3.5.2",
+    "use-react-router": "^1.0.7",
+    "yup": "^0.27.0",
+    "date-fns": "^1.30.1"
+  },
+  "devDependencies": {
+    "jest": "24.7.1",
+    "prettier": "^1.18.2",
+    "tslint": "^5.17.0",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-react": "^4.0.0",
+    "tslint-react-hooks": "^2.1.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "now-build": "npm run build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "lint": "tslint -c tslint.json 'src/**/*.{ts,tsx}'",
+    "lint-fix": "tslint --fix -c tslint.json 'src/**/*.{ts,tsx}'",
+    "clean": "rm -rf node_modules build"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

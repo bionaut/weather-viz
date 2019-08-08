@@ -1,0 +1,22 @@
+{
+  "extends": [
+    "tslint:latest",
+    "tslint-config-prettier",
+    "tslint-react",
+    "tslint-react-hooks"
+  ],
+  "rules": {
+    "react-hooks-nesting": "error",
+    "no-implicit-dependencies": false,
+    "no-duplicate-imports": false,
+    "jsx-no-multiline-js": false,
+    "no-submodule-imports": false,
+    "no-shadowed-variable": false,
+    "jsx-no-lambda": false,
+    "jsx-boolean-value": false,
+    "interface-over-type-literal": false,
+    "interface-name": false,
+    "jsx-key": false,
+    "object-literal-sort-keys": false
+  }
+}
