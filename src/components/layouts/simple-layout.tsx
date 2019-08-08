@@ -14,14 +14,17 @@ export const SimpleLayout: React.FC<SimpleLayoutProps> = ({
   ...rest
 }) => {
   return (
-    <Screen zIndex={1} flex={1} background={'gray.2'} overflow={'auto'}>
-      <Flex flex={1} flexDirection={'column'} alignItems={'center'} pt={[100]}>
+    <Screen zIndex={1} flex={1} background={'gray.4'} overflow={'auto'}>
+      <Flex flex={1} flexDirection={'column'} alignItems={'center'}>
         <Box
+          top={120}
           position={'absolute'}
-          width={['100%', null, null, null, null, '1300px']}
-          mt={['-30px']}
+          width={['100%']}
           borderRadius={'radius'}
-          background={'gray'}
+          background={'white'}
+          minHeight={'calc(100% - 120px)'}
+          p={20}
+          {...boxShadow}
           {...rest}
         >
           {children}
@@ -35,10 +38,7 @@ export const SimpleLayout: React.FC<SimpleLayoutProps> = ({
           justifyContent={'center'}
           {...boxShadow}
         >
-          <Flex
-            width={['100%', null, null, null, null, '1300px']}
-            px={'padding.0'}
-          >
+          <Flex width={['100%']} >
             {header}
           </Flex>
         </Flex>

@@ -2,11 +2,8 @@ import { Theme } from 'styled-system'
 
 export const breakpoints = [
   '320px',
-  '500px',
   '780px',
-  '1000px',
   '1300px',
-  '1600px',
 ]
 export const UNIT = 10
 
@@ -27,9 +24,7 @@ export const colors = {
   clearAlpha: 'rgba(255, 255, 255, 0.2)',
   error: '#bc3e3a',
   linkColor: '#3d91cd',
-  themeDark: '#204B8D',
-  themeDarkSecondary: '#3f67a2',
-  primary: ['#6EC60F', '#a5d96e', '#499e72', '#239A7B'],
+  primary: ['#4480FA', '#67a0cd', '#7ea8cd', '#6f889a'],
 }
 
 export const space = {
