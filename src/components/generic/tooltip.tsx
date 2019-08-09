@@ -62,6 +62,7 @@ export const Tooltip: React.FC<TooltipProps> = ({ children, title, color }) => {
           textAlign={'center'}
           whiteSpace={'nowrap'}
           color={'gray.1'}
+          fontSize={0}
         >
           {title}
         </Text>

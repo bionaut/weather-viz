@@ -4,15 +4,18 @@ import { IoIosMenu, IoMdAdd } from 'react-icons/io'
 import { TiWorld } from 'react-icons/ti'
 import useRouter from 'use-react-router'
 import { breakpoints } from '../../theme'
-import { Box, BoxProps, Button, Flex, Text } from '../generic'
+import { BoxProps, Button, Flex, Text } from '../generic'
+import { center } from '../presets'
 import { TabButton } from './tab-button'
 
 type HeaderProps = {}
 
 const Logo: FC<BoxProps> = props => (
-  <Box {...props}>
+  <Flex {...center} {...props}>
+    <Text fontSize={15}>Some</Text>
     <TiWorld color={'#4480FA'} size={30} />
-  </Box>
+    <Text fontSize={15}>Logo</Text>
+  </Flex>
 )
 
 export const Header: React.FC<HeaderProps> = () => {

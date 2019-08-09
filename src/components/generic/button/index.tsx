@@ -56,10 +56,16 @@ const ButtonWrapper: React.FC<ButtonProps> = styled(Flex).attrs(
   })
 )`
 
+
   // focus
   outline: none;
   box-shadow: 0 0 0 0 #9CABB8;
   transition: all 0.3s ease;
+  
+  :focus {
+     transform: perspective(700px) translateZ(1px);
+     box-shadow: 0 2px 10px -4px #9CABB8; 
+  }
   
   // extensions
   user-select: none;

@@ -42,22 +42,23 @@ type SelectProps = ButtonProps & {
 
 const DefaultItem: React.FC<any> = ({ onClick, value, toggle, label }) => (
   <Button
+    width={300}
     key={`${label}${value}`}
     onClick={() => {
       toggle()
       onClick(value)
     }}
-    justifyContent={'center'}
+    justifyContent={'flex-start'}
     {...borderBottom}
   >
-    <Text px={20} lineHeight={'50px'} textAlign={'center'}>
+    <Text fontSize={0} px={20} lineHeight={'50px'} textAlign={'left'}>
       {label}
     </Text>
   </Button>
 )
 
 const DefaultDisplay: React.FC<any> = ({ value, label, color }) => (
-  <Text {...label} light={true} mr={10} color={color} fontSize={1}>
+  <Text {...label} light={true} mr={10} color={color} fontSize={0}>
     {value}
   </Text>
 )
@@ -66,7 +67,7 @@ const defaultComponents = {
   Display: DefaultDisplay,
   Item: DefaultItem,
   Wrapper: ({ children, ...rest }: any) => (
-    <Flex flex={1} {...rest}>
+    <Flex minWidth={['100%', null, 300]} flex={1} {...rest}>
       {children}
     </Flex>
   ),
@@ -101,7 +102,6 @@ export const Select: React.FC<SelectProps> = ({
           left={0}
           position={'fixed'}
           onClick={toggle}
-          background={'darkAlpha'}
           zIndex={1}
         />
       )}
@@ -127,20 +127,13 @@ export const Select: React.FC<SelectProps> = ({
         {active && (
           <Flex
             {...boxShadow}
-            position={['fixed']}
-            top={'60%'}
-            left={0}
-            right={0}
-            bottom={0}
+            position={'absolute'}
+            mt={60}
             background={'white'}
             zIndex={100}
             px={'padding.1'}
             overflow={'auto'}
             flexDirection={'column'}
-            style={{
-              borderTopLeftRadius: '20px',
-              borderTopRightRadius: '20px',
-            }}
           >
             {options.length === 0 && (
               <Text {...label} fontSize={1}>

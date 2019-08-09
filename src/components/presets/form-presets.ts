@@ -5,6 +5,7 @@ export const formElementSpace = {
 }
 
 export const formElementBorders = (error?: string | boolean) => ({
-  border: '2px solid',
+  border: '1px solid',
+  borderRadius: 5,
   borderColor: error ? 'error' : 'border',
 })
