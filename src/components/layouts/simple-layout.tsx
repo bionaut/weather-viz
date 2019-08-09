@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { breakpoints } from '../../theme'
 import { Box, BoxProps, Flex, Screen } from '../generic'
 import { boxShadow } from '../presets'
 
@@ -14,17 +15,16 @@ export const SimpleLayout: React.FC<SimpleLayoutProps> = ({
   ...rest
 }) => {
   return (
-    <Screen zIndex={1} flex={1} background={'gray.4'} overflow={'auto'}>
+    <Screen zIndex={1} flex={1}  overflow={'auto'}>
       <Flex flex={1} flexDirection={'column'} alignItems={'center'}>
         <Box
           top={120}
           position={'absolute'}
-          width={['100%']}
+          width={['100%', null, null, breakpoints[2]]}
           borderRadius={'radius'}
           background={'white'}
           minHeight={'calc(100% - 120px)'}
           p={20}
-          {...boxShadow}
           {...rest}
         >
           {children}

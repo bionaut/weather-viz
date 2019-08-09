@@ -3,6 +3,7 @@ import * as React from 'react'
 import { IoIosMenu, IoMdAdd } from 'react-icons/io'
 import { TiWorld } from 'react-icons/ti'
 import useRouter from 'use-react-router'
+import { breakpoints } from '../../theme'
 import { Box, BoxProps, Button, Flex, Text } from '../generic'
 import { TabButton } from './tab-button'
 
@@ -27,7 +28,12 @@ export const Header: React.FC<HeaderProps> = () => {
           <IoMdAdd size={20} color={'white'} />
         </Button>
       </Flex>
-      <Flex flex={1} alignItems={'flex-end'}>
+      <Flex
+        alignSelf={'center'}
+        width={['100%', null, null, breakpoints[2]]}
+        flex={1}
+        alignItems={'flex-end'}
+      >
         <TabButton
           active={location.pathname === '/table'}
           onClick={() => history.push('/table')}
