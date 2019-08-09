@@ -1,10 +1,6 @@
 import { Theme } from 'styled-system'
 
-export const breakpoints = [
-  '320px',
-  '780px',
-  '1300px',
-]
+export const breakpoints = ['320px', '780px', '1300px']
 export const UNIT = 10
 
 export interface CustomTheme extends Theme {

@@ -3,12 +3,12 @@ import { Fragment } from 'react'
 import { RouteComponentProps } from 'react-router'
 import { Text } from '../../components'
 
-type HomeScreenProps = RouteComponentProps & {}
+type ChartViewScreenProps = RouteComponentProps & {}
 
-export const HomeScreen: React.FC<HomeScreenProps> = () => {
+export const ChartViewScreen: React.FC<ChartViewScreenProps> = () => {
   return (
     <Fragment>
-      <Text>asdf</Text>
-    </Fragment >
+      <Text>asdxxxaf</Text>
+    </Fragment>
   )
 }

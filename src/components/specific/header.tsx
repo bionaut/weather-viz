@@ -2,6 +2,7 @@ import { FC } from 'react'
 import * as React from 'react'
 import { IoIosMenu, IoMdAdd } from 'react-icons/io'
 import { TiWorld } from 'react-icons/ti'
+import useRouter from 'use-react-router'
 import { Box, BoxProps, Button, Flex, Text } from '../generic'
 import { TabButton } from './tab-button'
 
@@ -14,6 +15,7 @@ const Logo: FC<BoxProps> = props => (
 )
 
 export const Header: React.FC<HeaderProps> = () => {
+  const { history, location } = useRouter()
   return (
     <Flex flex={1} height={120} flexDirection={'column'}>
       <Flex justifyContent={'space-between'}>
@@ -26,12 +28,18 @@ export const Header: React.FC<HeaderProps> = () => {
         </Button>
       </Flex>
       <Flex flex={1} alignItems={'flex-end'}>
-        <TabButton active={true}>
+        <TabButton
+          active={location.pathname === '/table'}
+          onClick={() => history.push('/table')}
+        >
           <Text>Table view</Text>
-        </TabButton >
-        <TabButton>
+        </TabButton>
+        <TabButton
+          active={location.pathname === '/chart'}
+          onClick={() => history.push('/chart')}
+        >
           <Text>Chart View</Text>
-        </TabButton >
+        </TabButton>
       </Flex>
     </Flex>
   )

@@ -4,7 +4,8 @@ import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom'
 import { ThemeProvider } from 'styled-components'
 import { Header, SimpleLayout } from '../components'
 import { defaultTheme, GlobalReset } from '../theme'
-import { HomeScreen } from './home'
+import { ChartViewScreen } from './chart'
+import { TableViewScreen } from './table'
 
 const Providers: React.FC = ({ children }) => (
   <ThemeProvider theme={defaultTheme}>
@@ -19,8 +20,9 @@ const Routes: React.FC = () => {
         <GlobalReset />
         <SimpleLayout header={<Header />} accentColor={'white'}>
           <Switch>
-            <Route exact path={'/'} component={HomeScreen} />
-            <Redirect path={'*'} to={'/'} />
+            <Route exact path={'/table'} component={TableViewScreen} />
+            <Route exact path={'/chart'} component={ChartViewScreen} />
+            <Redirect path={'*'} to={'/table'} />
           </Switch>
         </SimpleLayout>
       </Fragment>

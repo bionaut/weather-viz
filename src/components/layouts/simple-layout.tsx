@@ -38,9 +38,7 @@ export const SimpleLayout: React.FC<SimpleLayoutProps> = ({
           justifyContent={'center'}
           {...boxShadow}
         >
-          <Flex width={['100%']} >
-            {header}
-          </Flex>
+          <Flex width={['100%']}>{header}</Flex>
         </Flex>
       </Flex>
     </Screen>

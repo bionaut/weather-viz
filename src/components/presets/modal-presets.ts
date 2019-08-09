@@ -26,5 +26,4 @@ export const modalControls = {
   borderColor: 'border',
   justifyContent: 'space-between',
   p: 'padding.1',
-
 }

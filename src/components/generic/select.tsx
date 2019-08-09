@@ -137,7 +137,10 @@ export const Select: React.FC<SelectProps> = ({
             px={'padding.1'}
             overflow={'auto'}
             flexDirection={'column'}
-            style={{ borderTopLeftRadius: '20px', borderTopRightRadius: '20px' }}
+            style={{
+              borderTopLeftRadius: '20px',
+              borderTopRightRadius: '20px',
+            }}
           >
             {options.length === 0 && (
               <Text {...label} fontSize={1}>
