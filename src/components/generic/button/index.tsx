@@ -23,12 +23,12 @@ const JumpingBox: any = styled(Box)`
   animation-duration: 1s;
   animation-iteration-count: infinite;
   animation-delay: ${({ delay }: any) => delay || 0}ms;
-  background: rgba(255, 255, 255, 1);
-  width: 8px;
-  height: 8px;
-  border-radius: 4px;
-  margin-left: 1px;
-  margin-right: 1px;
+  background: #4480FA;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  margin-left: 2px;
+  margin-right: 2px;
   box-shadow: 0 0 1px 1px silver;
 `
 

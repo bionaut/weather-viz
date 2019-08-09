@@ -8,7 +8,7 @@ export type PanelProps = FlexProps & {
 export const Panel: React.FC<PanelProps> = ({ title, children, ...rest }) => (
   <Flex
     flexDirection={'column'}
-    background={'gray.6'}
+    background={'white'}
     border={'1px solid'}
     borderColor={'border'}
     {...rest}

@@ -34,7 +34,7 @@ export const Field: React.FC<FieldProps> = ({
       {...rest}
     >
       {label && (
-        <Text mr={10} mb={2} fontSize={1}>
+        <Text mr={10} mb={2} fontSize={0}>
           {label}
         </Text>
       )}
@@ -49,6 +49,9 @@ export const Field: React.FC<FieldProps> = ({
           placeholder={placeholder}
         />
       )}
+      <Text color={'error'} fontSize={0} mt={10}>
+        {error}
+      </Text>
       {children}
     </Flex>
   )

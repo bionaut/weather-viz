@@ -1,6 +1,6 @@
 import { FC } from 'react'
 import * as React from 'react'
-import { IoIosMenu, IoMdAdd } from 'react-icons/io'
+import { IoIosMenu, IoIosPerson } from 'react-icons/io'
 import { TiWorld } from 'react-icons/ti'
 import useRouter from 'use-react-router'
 import { breakpoints } from '../../theme'
@@ -22,14 +22,21 @@ export const Header: React.FC<HeaderProps> = () => {
   const { history, location } = useRouter()
   return (
     <Flex flex={1} height={120} flexDirection={'column'}>
-      <Flex justifyContent={'space-between'}>
-        <Button height={50} width={50}>
+      <Flex justifyContent={'space-between'} px={20}>
+        <Flex {...center} height={50} width={50}>
           <IoIosMenu size={30} />
-        </Button>
+        </Flex>
         <Logo mt={10} />
-        <Button width={40} height={40} background={'primary.0'}>
-          <IoMdAdd size={20} color={'white'} />
-        </Button>
+        <Flex
+          m={5}
+          width={40}
+          height={40}
+          background={'primary.0'}
+          borderRadius={20}
+          {...center}
+        >
+          <IoIosPerson size={20} color={'white'} />
+        </Flex>
       </Flex>
       <Flex
         alignSelf={'center'}

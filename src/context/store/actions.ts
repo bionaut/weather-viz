@@ -1,3 +1,3 @@
 export const ACTIONS = {
-  RECEIVED: 'data-received',
+  CACHE_RESPONSE: 'cache-response'
 }

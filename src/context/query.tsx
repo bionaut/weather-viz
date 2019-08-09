@@ -1,8 +1,9 @@
-import { useEffect, useState } from 'react'
+import { filter, flatten, map, pipe } from 'ramda'
 import * as React from 'react'
-import { createRequest } from '../client'
-import { RequestParams } from '../types'
+import { useEffect, useState } from 'react'
+import { Record, RequestParams } from '../types'
 import { useStore } from './index'
+
 
 type QueryResult = {
   data?: any
@@ -16,30 +17,41 @@ type QueryProps = {
 }
 
 export const Query: React.FC<QueryProps> = ({ requestParams, children }) => {
-  const { state } = useStore()
+  const {
+    operations: { cachedRequest, getCachedResponse },
+  } = useStore()
 
-  const [data, setData] = useState(null)
   const [loading, setLoading] = useState(false)
-  const [errors, setErrors] = useState(null)
+  const [errors] = useState(null)
+
+  const params = flatten([requestParams]) as RequestParams[]
+
+  const data = pipe(
+    map<any, Record[]>(p => getCachedResponse(p)),
+    filter(v => !!v),
+    flatten
+  )(params)
 
   const result = { data, loading, errors }
 
-  const fetchData = async (requestParams: RequestParams | RequestParams[]) => {
+  const requestData = async () => {
     setLoading(true)
+    await Promise.all(
+      params.map(async p => {
+        const cached = getCachedResponse(p)
 
-    // todo check cache first
-
-    if (Array.isArray(requestParams)) {
-      // todo ...
-    } else {
-      const { data } = await createRequest(requestParams)
-      setData(data)
-    }
+        if (cached) {
+          return
+        }
+        return cachedRequest(p)
+      })
+    )
     setLoading(false)
   }
 
   useEffect(() => {
-    fetchData(requestParams)
+    requestData()
+    // eslint-disable-next-line
   }, [requestParams])
 
   return children(result)

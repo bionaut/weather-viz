@@ -2,23 +2,23 @@ import { stopPropagation } from './utility-presets'
 
 const common = {
   alignItems: 'stretch',
-  height: ['100%', null, null, null, 'auto'],
+  height: ['100%', null, null, 'auto'],
 }
 
 export const normalModal = {
-  width: ['100%', null, null, null, '500px'],
+  width: ['100%', null, null, '500px'],
   ...common,
   ...stopPropagation,
 }
 
 export const wideModal = {
-  width: ['100%', null, null, null, '800px'],
+  width: ['100%', null, null, '800px'],
   ...common,
   ...stopPropagation,
 }
 
 export const modalControls = {
-  position: ['fixed', null, null, null, 'relative'],
+  position: ['fixed', null, null, 'relative'],
   width: '100%',
   bottom: 0,
   background: 'border',

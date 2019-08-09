@@ -15,12 +15,12 @@ export const fonts = {
 
 export const colors = {
   border: '#75777d',
-  gray: ['#202124', '#3E3F42', '#9CABB8', '#FBFBFD', '#EBEBEB', '#fff'],
+  gray: ['#202124', '#3e3f42', '#9CABB8', '#FBFBFD', '#EBEBEB', '#fff'],
   darkAlpha: 'rgba(0, 0, 0, 0.4)',
   clearAlpha: 'rgba(255, 255, 255, 0.2)',
   error: '#bc3e3a',
   linkColor: '#3d91cd',
-  primary: ['#4480FA', '#67a0cd', '#7ea8cd', '#6f889a'],
+  primary: ['#4480FA', '#67a0cd', '#7ea8cd', '#6f889a', '#80C48D'],
 }
 
 export const space = {

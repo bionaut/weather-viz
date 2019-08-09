@@ -44,7 +44,7 @@ export const Modal: React.FC<ModalProps> = ({
         {title}
       </Text>
       {onClose && (
-        <Button onClick={onClose}>
+        <Button p={10} onClick={onClose}>
           <MdClose color={'gray'} size={20} />
         </Button>
       )}
@@ -59,10 +59,10 @@ export const Modal: React.FC<ModalProps> = ({
       onClick={onClose}
       overflow={'auto'}
       justifyContent={justifyOrientation(orientation)}
-      alignItems={['flex-start', null, null, null, 'center']}
+      alignItems={['flex-start', null, null, 'center']}
     >
       <FadeInFlex
-        boxShadow={'0 2px 8px -3px lightgray'}
+        boxShadow={'0 2px 10px -8px black'}
         flexDirection={'column'}
         {...rest}
       >

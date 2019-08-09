@@ -1,3 +1,6 @@
+// in normal app catalogs should
+// be fetched from BE in ideal case
+
 export const RECORD = {
   types: [['tas', 'Temperature'], ['pr', 'Precipitation']],
 }
@@ -12,4 +15,19 @@ export const COUNTRIES = [
   ['MNE', 'Montenegro'],
   ['MKD', 'Macedonia'],
   ['YUG', 'Yugoslavia'],
+]
+
+export const MONTHS = [
+  'Jan',
+  'Feb',
+  'Mar',
+  'Apr',
+  'May',
+  'Jun',
+  'Jul',
+  'Aug',
+  'Sep',
+  'Oct',
+  'Nov',
+  'Dec',
 ]
