@@ -9,7 +9,7 @@ import {
   Text,
   Tooltip,
 } from '../../components/generic'
-import { circularButton, normalModal } from '../../components/presets'
+import { circularButton, modalControls, normalModal } from '../../components/presets'
 import { useStore } from '../../context'
 import { COUNTRIES, RECORD, YEAR_PERIODS } from '../../context/catalogs'
 import { colors } from '../../theme'
@@ -22,7 +22,9 @@ type FilterProps = {
 }
 
 export const Filter: React.FC<FilterProps> = ({ values, onChange }) => {
-  const { operations: { appendRecord } } = useStore()
+  const {
+    operations: { appendRecord },
+  } = useStore()
   const [isModal, setModal] = useState(false)
   const yearsPeriod = `${values.fromYear}-${values.toYear}`
 
@@ -103,16 +105,27 @@ export const Filter: React.FC<FilterProps> = ({ values, onChange }) => {
             initialValues={{ gcm: '' }}
           >
             {({ submitForm, isValid }) => (
-              <Button
-                mt={30}
-                primary
-                onClick={() => submitForm()}
-                disabled={!isValid}
-              >
-                <Text color={'white'} bold>
-                  Create Entry
-                </Text>
-              </Button>
+              <Flex {...modalControls} background={'transparent'}>
+                <Button
+                  primary
+                  clear
+                  onClick={() => setModal(false)}
+                  disabled={!isValid}
+                >
+                  <Text fontSize={0} color={'gray.0'} >
+                    Cancel
+                  </Text>
+                </Button>
+                <Button
+                  primary
+                  onClick={() => submitForm()}
+                  disabled={!isValid}
+                >
+                  <Text fontSize={0} color={'white'} >
+                    Create Entry
+                  </Text>
+                </Button>
+              </Flex>
             )}
           </EntryForm>
         </Modal>

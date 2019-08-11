@@ -21,9 +21,6 @@ export const modalControls = {
   position: ['fixed', null, 'relative'],
   width: '100%',
   bottom: 0,
-  background: 'border',
-  borderTop: '1px solid',
-  borderColor: 'border',
   justifyContent: 'space-between',
   p: 'padding.1',
 }

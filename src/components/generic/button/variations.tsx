@@ -19,6 +19,7 @@ export const primary = ({
           opacity: ${disabled ? 0.5 : 1};
           ${disabled ? 'outline: none;' : ''}
           color: white;
+          border-radius: 5px;
           height: ${theme.space.elementSize || 40}px;
           padding-left: ${theme.space.smallPadding || 10}px;
           padding-right: ${theme.space.smallPadding || 10}px;
