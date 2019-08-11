@@ -11,6 +11,7 @@ import {
 } from '../../context/utils'
 import { Record, RequestParams } from '../../types'
 import { Filter } from '../common/filter'
+import { useRequestParams } from '../common/use-request-params'
 import { Average } from './average'
 import { Precipitation } from './precipitation'
 import { Temperature } from './temperature'
@@ -30,16 +31,7 @@ const textPreset = {
 }
 
 export const TableViewScreen: React.FC<TableViewScreenProps> = () => {
-  const [requestParams, setRequestParams] = useState<RequestParams>(initState)
-
-  const setField = (value: { [k: string]: any }) => {
-    setRequestParams({ ...requestParams, ...value })
-  }
-
-  let payloadParams: RequestParams | RequestParams[] = requestParams
-  if (requestParams.country === 'YUG') {
-    payloadParams = generateYugoslaviaRequests(requestParams)
-  }
+  const {requestParams, payloadParams, setField} = useRequestParams(initState)
 
   return (
     <Fragment>

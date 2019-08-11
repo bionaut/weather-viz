@@ -17,6 +17,7 @@ import { combineRecords, generateYugoslaviaRequests } from '../../context/utils'
 import { colors } from '../../theme'
 import { RequestParams } from '../../types'
 import { Filter } from '../common/filter'
+import { useRequestParams } from '../common/use-request-params'
 
 type ChartViewScreenProps = RouteComponentProps & {}
 const initState: RequestParams = {
@@ -28,16 +29,7 @@ const initState: RequestParams = {
 }
 
 export const ChartViewScreen: React.FC<ChartViewScreenProps> = () => {
-  const [requestParams, setRequestParams] = useState<RequestParams>(initState)
-
-  const setField = (value: { [k: string]: any }) => {
-    setRequestParams({ ...requestParams, ...value })
-  }
-
-  let payloadParams: RequestParams | RequestParams[] = requestParams
-  if (requestParams.country === 'YUG') {
-    payloadParams = generateYugoslaviaRequests(requestParams)
-  }
+  const {requestParams, payloadParams, setField} = useRequestParams(initState)
 
   return (
     <Fragment>
