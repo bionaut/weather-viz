@@ -59,7 +59,7 @@ export const Modal: React.FC<ModalProps> = ({
       onClick={onClose}
       overflow={'auto'}
       justifyContent={justifyOrientation(orientation)}
-      alignItems={['flex-start', null, null, 'center']}
+      alignItems={['flex-start', null, 'center']}
     >
       <FadeInFlex
         boxShadow={'0 2px 10px -8px black'}
