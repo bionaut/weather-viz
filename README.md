@@ -1,44 +1,57 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+### Start the app  
+`yarn && yarn start`
+> browser window should open automatically on `localhost:3000`   
 
-### `npm start`
+### Tech used
+- Typescript
+- React
+- React-Router
+- Styled Components 
+- Styled System
+- React Charts (recharts)
+- Formik & Yup
+- axios
+- ramda
+- react-icons
+- Jest 
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Approach & mindset  
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+> Originally i wanted to use my favourite apollo-client, but instead i made my own simplified apollo like client, using non-graphql request with axios.
+>
+> For state management i used react hooks (`useReducer`) instead of full redux approach. Entire store is in this case basically a cache for API calls.  
+> 
+> All UI components are made from scratch and quite flexible, utilizing Lego-like structure when one component is inheriting props from another (`Box` is main building block).
+>
+> Responsivity is achieved by using amazing `styled-system` library (eg: `<Box p=[0, 5, 10]>` === padding on mobile is 0, on tablet 5 and 10 on bigger screens ), respecting breakpoints in `default-theme.ts`
 
-### `npm test`
+### How it works
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+There are 2 main Types:  
+`Record` represents the response item(s)  
+`RequestParams` is used for assembling the request(s)   
 
-### `npm run build`
+`Filter` component generates `RequestParams` for each request based on selected options in the filter.  
+For Yugoslavia case, `RequestParams` for all necessary countries are generated.  
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+One `RequestParams` or more [`RequestParams`, `RequestParams`] are piped into Query component via props.    
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+`Query` component, using render props, is supplying its children with `{ data, loading, errors }`  
+- `data` is the final data from one or more requests
+- `loading` is `bool` value which is `true` until all data is loaded  
+- `errors` if something goes wrong errors object will contain error messages    
+> before fetching any data, `Query` is checking cache store (via `useStore` hook) for any existing  cached responses. Each API response is cached under a unique key (in this case Key is generated from `RequestParams`, but normally some id would be nice + hashing) 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Adding new data locally is using Formik and Yup for form validation and input. Values are then added to cache store under current cache key. 
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+#### Additional notes and spoilers :)
+- Since i didn't use any pre-built UI library there is not much accessibility support (ARIA and alike). I think, in real production app, this UI library should be extracted into separate package and fully tested for all scenarios.  
+- I only tested data transformers, for same reasons as point above.  
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Anyway, I hope you like it ;)

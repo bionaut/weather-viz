@@ -4,7 +4,7 @@ import { IoIosMenu, IoIosPerson } from 'react-icons/io'
 import { TiWorld } from 'react-icons/ti'
 import useRouter from 'use-react-router'
 import { breakpoints } from '../../theme'
-import { BoxProps, Button, Flex, Text } from '../generic'
+import { BoxProps, Flex, Text } from '../generic'
 import { center } from '../presets'
 import { TabButton } from './tab-button'
 

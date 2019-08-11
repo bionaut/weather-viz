@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import * as React from 'react'
 import { Fragment } from 'react'
 import { RouteComponentProps } from 'react-router'
@@ -13,7 +12,7 @@ import {
 } from 'recharts'
 import { Box, FadeInFlex, Loader } from '../../components/generic'
 import { Query } from '../../context/query'
-import { combineRecords, generateYugoslaviaRequests } from '../../context/utils'
+import { combineRecords } from '../../context/utils'
 import { colors } from '../../theme'
 import { RequestParams } from '../../types'
 import { Filter } from '../common/filter'

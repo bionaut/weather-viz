@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Fragment, useState } from 'react'
+import { Fragment } from 'react'
 import { RouteComponentProps } from 'react-router'
 import { FadeInFlex, Flex, Grid, Loader, Text } from '../../components/generic'
 import { MONTHS } from '../../context/catalogs'
@@ -7,7 +7,6 @@ import { Query } from '../../context/query'
 import {
   averageMonthValues,
   combineRecords,
-  generateYugoslaviaRequests,
 } from '../../context/utils'
 import { Record, RequestParams } from '../../types'
 import { Filter } from '../common/filter'
