@@ -53,5 +53,3 @@ Adding new data locally is using Formik and Yup for form validation and input. V
 - Since i didn't use any pre-built UI library there is not much accessibility support (ARIA and alike). I think, in real production app, this UI library should be extracted into separate package and fully tested for all scenarios.  
 - I only tested data transformers, for same reasons as point above.  
 
-
-Anyway, I hope you like it ;)
